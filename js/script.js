@@ -5,7 +5,7 @@ const check=document.getElementById("check");
 const music= document.getElementById("player");
 
 document.getElementById("buttons").addEventListener("click", function1);
-//document.getElementById("reset-game").addEventListener("click" function2);
+
 
 const chips = {
     '-1' : "yellow",
