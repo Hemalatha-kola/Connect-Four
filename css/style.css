@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+h3 {
+    color: black;
+}
+
+#board {
+    display: grid;
+    background-color: blue;
+    grid-template-rows: repeat(6, 10vmin);
+    grid-template-columns: repeat(7, 10vmin);
+    gap: 1vmin;
+    height: 67vmin;
+    width: 77vmin;
+    justify-content: center;
+    border-radius: 5%;
+}
+
+#board > div {
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
+    align-content: center;
+}
+
+#buttons > button {
+  height: 4vmin;
+  width: 8vmin;
+  margin: .8vmin;
+  font-size: 1.25vmin;
+  text-align:center;
+  vertical-align: middle;
+  background-color: greenyellow;
+  border-radius: 30%;
+}
+
+#buttons > button:hover {
+    background-color: pink;
+  }
+
+#buttons  {
+    display: grid;
+    grid-template-rows: 10vmin;
+    grid-template-columns: repeat(7, 10vmin);
+    width: 77vmin;
+    gap: 1.2vmin;    
+}
+
+.rstgame > button {
+    background-color: black;
+    color: white;
+}
+
+.rstgame > button:hover {
+    background-color: white;
+    color: black;
+}
