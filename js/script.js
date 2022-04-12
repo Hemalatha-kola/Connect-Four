@@ -39,7 +39,7 @@ function reset(){
 function function1(evt){
     let coloumnIndex= button.indexOf(evt.target);
     //console.log(button.indexOf(evt.target));
-    if ( coloumnIndex === -1){
+    if ( coloumnIndex === -1 || winner){
         return;
     }
     let column = board[coloumnIndex];
@@ -51,10 +51,18 @@ function function1(evt){
     
     column[rowIndex]=player;
     player*=-1
-   message.innerHTML= `Now It's ${player===1 ? "Red" : "Yellow"} 's turn`
-    //winner = findWinner(coloumnIndex, rowIndex);
+   
+    winner = findWinner(coloumnIndex, rowIndex);
     func2();
-
+      if(winner ==="T"){
+          msg1.innerText = `It's a Tie!`
+      }
+      else if(winner){
+         msg1.innerText = `${winner === 1 ? 'Red' : 'Yellow'} Wins!`;
+      }
+      else{
+        message.innerHTML= `Now It's ${player===1 ? "Red" : "Yellow"} 's turn`;
+      }
 }
 //
 function func2(){
@@ -95,11 +103,22 @@ function checkWinner(cI){
  const column = board[cI];
 
 for(let rI=0; rI< column.length; rI++){
-    let winner=vertical(column, rI) || horizontal(cI, rI) || diagonal(cI, rI, 1) || diagonal(cI, rI, -1);
+    let winner=vertical(column, rI) ;
     if(winner) return winner;
 }
  return null;//otherwise it returns undefined.
 }
+//
+function vertical(column, rI){
+       if(Math.abs(column[rI] + column[rI + 1] + column[rI + 2] + column[rI + 3]) === 4){
+           return column[rI];
+       }
+       else{
+              return null;
+       }
+}
+
+
 
 //
 function resettxt(){
