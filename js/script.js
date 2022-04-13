@@ -37,15 +37,15 @@ function reset(){
  func2();
 }
 function function1(evt){
-    let coloumnIndex= button.indexOf(evt.target);
+    const coloumnIndex= button.indexOf(evt.target);
     //console.log(button.indexOf(evt.target));
     if ( coloumnIndex === -1 || winner){
         return;
     }
-    let column = board[coloumnIndex];
+    const column = board[coloumnIndex];
     
     //console.log(board[coloumnIndex]);
-    let rowIndex=column.indexOf(0);
+   const rowIndex=column.indexOf(0);
    
         
     
@@ -79,7 +79,7 @@ board.forEach((coloumn, coloumnidx) => {
 });
 
 turns++;
-resettxt();
+
 }
 
 //
@@ -88,8 +88,8 @@ function findWinner(){
     if (turns>=42){
         return winner = "T";
     }
-    for(let colIndex=0; colIndex<6; colIndex++){
-        winner= checkWinner(colIndex);
+    for(let coloumnIndex=0; coloumnIndex<6; coloumnIndex++){
+        winner= checkWinner(coloumnIndex);
         if(winner){
             break;
         }
@@ -99,32 +99,30 @@ function findWinner(){
 }
 //
 
-function checkWinner(cI){
- const column = board[cI];
+function checkWinner(coloumnIndex){
+ const column = board[coloumnIndex];
 
-for(let rI=0; rI< column.length; rI++){
-    let winner=vertical(column, rI) ;
+for(let rowIndex=0; rowIndex< column.length; rowIndex++){
+    let winner=vertical(column, rowIndex) ||horizontal(coloumnIndex, rowIndex);
     if(winner) return winner;
 }
  return null;//otherwise it returns undefined.
 }
 //
-function vertical(column, rI){
-       if(Math.abs(column[rI] + column[rI + 1] + column[rI + 2] + column[rI + 3]) === 4){
-           return column[rI];
+function vertical(column, rowIndex){
+       if(Math.abs(column[rowIndex] + column[rowIndex + 1] + column[rowIndex + 2] + column[rowIndex + 3]) === 4){
+           return column[rowIndex];
        }
        else{
               return null;
        }
 }
-
-
-
 //
-function resettxt(){
-    if(turns>=42){
-        resetmsg.innerText = "Reset";
-      }else{
-          resetmsg.innerText = "Play";
-      }
+function horizontal(coloumnIndex, rowIndex){
+    if (coloumnIndex>3) return null;
+    if(Math.abs(board[coloumnIndex][rowIndex] + board[coloumnIndex + 1][rowIndex] + board[coloumnIndex + 2][rowIndex] + board[coloumnIndex + 3][rowIndex]) === 4){
+return board[coloumnIndex][rowIndex];
+    }else{
+        return null;
+    }
 }
