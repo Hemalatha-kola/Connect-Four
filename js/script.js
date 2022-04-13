@@ -6,6 +6,11 @@ const music= document.getElementById("player");
 
 document.getElementById("buttons").addEventListener("click", function1);
 document.getElementById("reset-game").addEventListener("click", reset);
+document.querySelector("#check").addEventListener("click", backgroundmusic);
+
+function backgroundmusic(){
+    check.checked ? music.play() : music.pause();
+}
 
 const chips = {
     '-1' : "yellow",
@@ -38,7 +43,7 @@ function reset(){
 }
 function function1(evt){
     const coloumnIndex= button.indexOf(evt.target);
-    console.log(button.indexOf(evt.target));
+   // console.log(button.indexOf(evt.target));
     if ( coloumnIndex === -1 || winner){
         return;
     }
@@ -119,6 +124,7 @@ function vertical(column, rI){
 }
 //
 function horizontal(coloumnIndex, roIndex){
+    
     if (coloumnIndex>3) return null;
     if(Math.abs(board[coloumnIndex][roIndex] + board[coloumnIndex + 1][roIndex] + board[coloumnIndex + 2][roIndex] + board[coloumnIndex + 3][roIndex]) === 4){
 return board[coloumnIndex][roIndex];
@@ -129,6 +135,7 @@ return board[coloumnIndex][roIndex];
 //
 
 function diagonal(colid, rowid){
+    
     if (colid>3) return null;//cannot read properties of reading 3
    if(Math.abs(board[colid][rowid] + board[colid + 1][rowid + 1] + board[colid + 2][rowid + 2] + board[colid + 3][rowid + 3]) === 4){
        return board[colid][rowid];
