@@ -48,9 +48,6 @@ h2 {
   height: 4vmin;
   width: 8vmin;
   margin: 10px;
-  font-size: 1.25vmin;
-  text-align:center;
-  vertical-align: middle;
   background-color: greenyellow;
   border-radius: 30%;
 }
@@ -68,8 +65,10 @@ h2 {
 }
 
 .rstgame > button {
-    background-color: black;
-    color: white;
+    background-color: peachpuff;
+    color: red;
+    height: 4vmin;
+  width: 20vmin;
 }
 
 .rstgame > button:hover {
@@ -80,4 +79,8 @@ h2 {
     color:chartreuse;
     font-weight: bold;
     font-size: 20px;
+}
+#msg1{
+    font-weight: bolder;
+    font-size: 30px;
 }
