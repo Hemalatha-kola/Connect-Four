@@ -36,7 +36,7 @@ function reset(){
 
  player=1;
  turns=0;
- winner=0;
+ winner=null;
  func2();
 }
 function function1(evt){
@@ -111,7 +111,7 @@ for(let rI=0; rI< column.length; rI++){
 }
  return null;//otherwise it returns undefined.
 }
-//
+//--------Winning Logic--------------//
 function vertical(column, rI){
        if(Math.abs(column[rI] + column[rI + 1] + column[rI + 2] + column[rI + 3]) === 4){
            return column[rI];

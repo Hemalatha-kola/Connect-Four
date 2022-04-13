@@ -17,6 +17,8 @@ body {
 h1 {
     text-align: center;
     color: white;
+    font-weight: bolder;
+    font-size: 60px;
 }
 
 h2 {
@@ -77,5 +79,5 @@ h2 {
  .play{
     color:chartreuse;
     font-weight: bold;
-    font-size: large;
+    font-size: 20px;
 }
