@@ -8,9 +8,7 @@ document.getElementById("buttons").addEventListener("click", function1);
 document.getElementById("reset-game").addEventListener("click", reset);
 document.querySelector("#check").addEventListener("click", backgroundmusic);
 
-function backgroundmusic(){
-    check.checked ? music.play() : music.pause();
-}
+
 
 const chips = {
     '-1' : "yellow",
@@ -154,4 +152,9 @@ function diagonal2(cd, rd){
     else{
         return null;
     }
+}
+//
+
+function backgroundmusic(){
+    check.checked ? music.play() : music.pause();
 }
