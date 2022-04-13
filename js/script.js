@@ -137,6 +137,8 @@ function diagonal(colid, rowid){
        return null;
    }
 }
+//
+
 function diagonal2(cd, rd){
     if(cd >3)return null;
     if(Math.abs(board[cd][rd] + board[cd + 1][rd - 1] + board[cd + 2][rd - 2] + board[cd + 3][rd - 3]) === 4){
