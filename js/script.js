@@ -88,8 +88,8 @@ function findWinner(){
     if (turns>=42){
         return winner = "T";
     }
-    for(let coloumnIndex=0; coloumnIndex<6; coloumnIndex++){
-        winner= checkWinner(coloumnIndex);
+    for(let colindex=0;  colindex<=6;  colindex++){
+        winner= checkWinner( colindex);
         if(winner){
             break;
         }
@@ -99,29 +99,29 @@ function findWinner(){
 }
 //
 
-function checkWinner(coloumnIndex){
- const column = board[coloumnIndex];
+function checkWinner(cI){
+ const column = board[cI];
 
-for(let rowIndex=0; rowIndex< column.length; rowIndex++){
-    let winner=vertical(column, rowIndex) ||horizontal(coloumnIndex, rowIndex);
+for(let rI=0; rI< column.length; rI++){
+    let winner=vertical(column, rI) ||horizontal(cI, rI);
     if(winner) return winner;
 }
  return null;//otherwise it returns undefined.
 }
 //
-function vertical(column, rowIndex){
-       if(Math.abs(column[rowIndex] + column[rowIndex + 1] + column[rowIndex + 2] + column[rowIndex + 3]) === 4){
-           return column[rowIndex];
+function vertical(column, rI){
+       if(Math.abs(column[rI] + column[rI + 1] + column[rI + 2] + column[rI + 3]) === 4){
+           return column[rI];
        }
        else{
               return null;
        }
 }
 //
-function horizontal(coloumnIndex, rowIndex){
+function horizontal(coloumnIndex, roIndex){
     if (coloumnIndex>3) return null;
-    if(Math.abs(board[coloumnIndex][rowIndex] + board[coloumnIndex + 1][rowIndex] + board[coloumnIndex + 2][rowIndex] + board[coloumnIndex + 3][rowIndex]) === 4){
-return board[coloumnIndex][rowIndex];
+    if(Math.abs(board[coloumnIndex][roIndex] + board[coloumnIndex + 1][roIndex] + board[coloumnIndex + 2][roIndex] + board[coloumnIndex + 3][roIndex]) === 4){
+return board[coloumnIndex][roIndex];
     }else{
         return null;
     }
