@@ -15,6 +15,11 @@ body {
     justify-content: center;
     align-items: center;
 }
+h2{
+    color: darkblue;
+    font-family: cursive;
+    margin-top: 0em;
+}
 
 h1 {
     text-align: center;
@@ -24,7 +29,8 @@ h1 {
     font-family: 'Press Start 2P', cursive;
 }
 
-h2 {
+h3 {
+    margin-top: 0em;
     color:rgb(221, 255, 0);
 }
 
@@ -66,6 +72,7 @@ h2 {
     width: 77vmin;
     gap: 0.2vmin;  
     margin-left:40px;  
+    
 }
 
 .rstgame > button {
