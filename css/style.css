@@ -80,6 +80,7 @@ h3 {
     color: red;
     height: 4vmin;
   width: 20vmin;
+  font-size: larger;
 }
 
 .rstgame > button:hover {
@@ -96,4 +97,25 @@ h3 {
     font-size: 30px;
 }
 
+@media only screen and (min-width:300px) and (max-width:700px) {
+    #board{
+        max-height: 62vmin;
+    }
+    .rstgame > button{
+       font-size: 10px;
+    }
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: small;
+
+        
+    }
+}
+@media only screen and (min-width:300px) and (max-width:600px) {
+    #buttons  {
+        margin-right: 30px;
+    }
+}
 
