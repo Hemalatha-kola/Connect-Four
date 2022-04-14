@@ -1,9 +1,9 @@
 # CONNECT FOUR!
 
 ## Technologies Used:
-HTML
-CSS
-JavaScript
+    HTML
+    CSS
+    JavaScript
 
 ## Gameplay
 ### Objective
