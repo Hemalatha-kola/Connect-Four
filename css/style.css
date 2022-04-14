@@ -33,7 +33,7 @@ h2 {
     background-color: blue;
     grid-template-rows: repeat(6, 10vmin);
     grid-template-columns: repeat(7, 10vmin);
-    gap: 1.5vmin;
+    gap: 0.2vmin;
     height: 77vmin;
     width: 97vmin;
     justify-content: center;
@@ -64,7 +64,8 @@ h2 {
     grid-template-rows: 10vmin;
     grid-template-columns: repeat(7, 10vmin);
     width: 77vmin;
-    gap: 1.2vmin;    
+    gap: 0.2vmin;  
+    margin-left:40px;  
 }
 
 .rstgame > button {
@@ -79,7 +80,7 @@ h2 {
     color: black;
 }
  .play{
-    color:rgb(90, 234, 18);
+    color:rgb(207, 18, 160);
     font-weight: bold;
     font-size: 20px;
 }

@@ -1,6 +1,6 @@
 # CONNECT FOUR!
 
-![connectfour](https://i.imgur.com/QuNiZ3G.png)            
+![connectfour](https://i.imgur.com/XnfwQc5.png)           
 
 ## Technologies Used:
     HTML
