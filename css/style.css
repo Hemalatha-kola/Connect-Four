@@ -2,27 +2,30 @@
     box-sizing: border-box;
 }
 
+
+
 body {
-    background-image: url('https://i.imgur.com/r9RdHAh.jpeg') ;
+    background-image: linear-gradient(to left top, #6bd186, #00cdaf, #00c5d8, #00b8f5, #00a6fe, #8a9bff, #cd8def, #fb7fce, #ff88a6, #ffa67b, #ffd05a, #f9fb5f);
     background-attachment: fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: white;
+    
     justify-content: center;
     align-items: center;
 }
 
 h1 {
     text-align: center;
-    color: white;
+    color: rgb(96, 47, 145);
     font-weight: bolder;
-    font-size: 60px;
+    font-size: 50px;
+    font-family: 'Press Start 2P', cursive;
 }
 
 h2 {
-    color:orange;
+    color:rgb(221, 255, 0);
 }
 
 #board {
@@ -76,7 +79,7 @@ h2 {
     color: black;
 }
  .play{
-    color:chartreuse;
+    color:rgb(90, 234, 18);
     font-weight: bold;
     font-size: 20px;
 }
