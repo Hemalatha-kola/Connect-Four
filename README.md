@@ -14,5 +14,10 @@ The objective of the game is to be the first to form a horizontal, vertical, or 
 ### How To Play
 At each turn, player will drop a game piece in one of the seven columns by clicking on the top of the buttons.
 
+[Play Here!](seir-project1.netlify.app)
+
 ###  For More Info Click on Below !                                  
 [Connect Four!](https://en.wikipedia.org/wiki/Connect_Four)
+
+### Next Steps
+In the future ,will work AI so that players can play against computer.

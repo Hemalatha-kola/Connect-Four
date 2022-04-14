@@ -51,7 +51,7 @@ function function1(evt){
    const rowIndex=column.indexOf(0);
    
         
-    
+    console.log(column[rowIndex]);
     column[rowIndex]=player;
     player*=-1
    
@@ -66,13 +66,16 @@ function function1(evt){
       else{
         message.innerHTML= `Now It's ${player===1 ? "Red" : "Yellow"} 's turn`;
       }
+      
+
 }
 //
 function func2(){
 board.forEach((coloumn, coloumnidx) => {
-
+    //console.log(coloumn);
     coloumn.forEach((cell, cellidx) => {
-
+       //console.log(cell);
+      // console.log("2. "+cellidx);
        
        let color = document.getElementById(`c${coloumnidx}r${cellidx}`);
        color.style.backgroundColor= chips[cell];
@@ -106,13 +109,13 @@ function checkWinner(cI){
  const column = board[cI];
 
 for(let rI=0; rI< column.length; rI++){
-    let winner=vertical(column, rI) || horizontal(cI, rI) || diagonal(cI, rI) || diagonal2(cI, rI);
+    let winner=checkingVertical(column, rI) || checkingHorizontal(cI, rI) || checkingDiagonal(cI, rI) || checkingDiagonal2(cI, rI);
     if(winner) return winner;
 }
  return null;//otherwise it returns undefined.
 }
 //--------Winning Logic--------------//
-function vertical(column, rI){
+function checkingVertical(column, rI){
        if(Math.abs(column[rI] + column[rI + 1] + column[rI + 2] + column[rI + 3]) === 4){
            return column[rI];
        }
@@ -121,7 +124,7 @@ function vertical(column, rI){
        }
 }
 //
-function horizontal(coloumnIndex, roIndex){
+function checkingHorizontal(coloumnIndex, roIndex){
     
     if (coloumnIndex>3) return null;
     if(Math.abs(board[coloumnIndex][roIndex] + board[coloumnIndex + 1][roIndex] + board[coloumnIndex + 2][roIndex] + board[coloumnIndex + 3][roIndex]) === 4){
@@ -132,7 +135,7 @@ return board[coloumnIndex][roIndex];
 }
 //
 
-function diagonal(colid, rowid){
+function checkingDiagonal(colid, rowid){
     
     if (colid>3) return null;//cannot read properties of reading 3
    if(Math.abs(board[colid][rowid] + board[colid + 1][rowid + 1] + board[colid + 2][rowid + 2] + board[colid + 3][rowid + 3]) === 4){
@@ -144,7 +147,7 @@ function diagonal(colid, rowid){
 }
 //
 
-function diagonal2(cd, rd){
+function checkingDiagonal2(cd, rd){
     if(cd >3)return null;
     if(Math.abs(board[cd][rd] + board[cd + 1][rd - 1] + board[cd + 2][rd - 2] + board[cd + 3][rd - 3]) === 4){
         return board[cd][rd];
