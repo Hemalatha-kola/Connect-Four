@@ -1,21 +1,22 @@
+/*-----------Cached Element References--------- */
 const button = [...document.querySelectorAll("#buttons > button")];
 const message=document.getElementById("msg1");
 const resetmsg= document.getElementById("reset-game");
 const check=document.getElementById("check");
 const music= document.getElementById("player");
-
+/*-----Event Listener--------------*/
 document.getElementById("buttons").addEventListener("click", function1);
 document.getElementById("reset-game").addEventListener("click", reset);
 document.querySelector("#check").addEventListener("click", backgroundmusic);
 
 
-
+/*-------Chips object------- */
 const chips = {
     '-1' : "yellow",
     '1' : "red",
     '0' : "white"
 }
-
+/*--------Variable declaration------- */
 let board;
 let player;
 let turns;
@@ -37,22 +38,20 @@ board = [
 player=1;
 turns=0;
 winner=null;
-func2();
+iterate();
 }
 function function1(evt){
     const coloumnIndex= button.indexOf(evt.target);
-   // console.log(button.indexOf(evt.target));
     if ( coloumnIndex === -1 || winner){
         return;
     }
     const column = board[coloumnIndex];
-    //console.log(board[coloumnIndex]);
     const rowIndex=column.indexOf(0);
     console.log(column[rowIndex]);
     column[rowIndex]=player;
     player*=-1
     winner = findWinner(coloumnIndex, rowIndex);
-    func2();
+    iterate();
     if(winner ==="T"){
         msg1.innerText = `It's a Tie!`
     }
@@ -65,13 +64,10 @@ function function1(evt){
     
 
 }
-//
-function func2(){
+///*--------Iterate through each coloumn and each cell in a coloumn---------------------- */
+function iterate(){
 board.forEach((coloumn, coloumnidx) => {
-    //console.log(coloumn);
     coloumn.forEach((cell, cellidx) => {
-       //console.log(cell);
-      // console.log("2. "+cellidx);
     let color = document.getElementById(`c${coloumnidx}r${cellidx}`);
     color.style.backgroundColor= chips[cell];
     });
@@ -83,8 +79,7 @@ turns++;
 
 }
 
-//
-
+///*-----------Checking for winner----------------- */
 function findWinner(){
     if (turns>=42){
         return winner = "T";
@@ -94,20 +89,17 @@ function findWinner(){
         if(winner){
             break;
         }
-    
     }
     return winner;
 }
 //
-
 function checkWinner(cI){
 const column = board[cI];
-
 for(let rI=0; rI< column.length; rI++){
     let winner=checkingVertical(column, rI) || checkingHorizontal(cI, rI) || checkingDiagonal(cI, rI) || checkingDiagonal2(cI, rI);
     if(winner) return winner;
 }
-return null;//otherwise it returns undefined.
+return null;
 }
 //--------Winning Logic--------------//
 function checkingVertical(column, rI){
@@ -119,8 +111,7 @@ function checkingVertical(column, rI){
     }
 }
 //
-function checkingHorizontal(coloumnIndex, roIndex){
-    
+function checkingHorizontal(coloumnIndex, roIndex){  
     if (coloumnIndex>3) return null;
     if(Math.abs(board[coloumnIndex][roIndex] + board[coloumnIndex + 1][roIndex] + board[coloumnIndex + 2][roIndex] + board[coloumnIndex + 3][roIndex]) === 4){
 return board[coloumnIndex][roIndex];
@@ -130,9 +121,8 @@ return board[coloumnIndex][roIndex];
 }
 //
 
-function checkingDiagonal(colid, rowid){
-    
-    if (colid>3) return null;//cannot read properties of reading 3
+function checkingDiagonal(colid, rowid){  
+    if (colid>3) return null;
 if(Math.abs(board[colid][rowid] + board[colid + 1][rowid + 1] + board[colid + 2][rowid + 2] + board[colid + 3][rowid + 3]) === 4){
     return board[colid][rowid];
 }

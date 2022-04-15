@@ -1,11 +1,14 @@
 # CONNECT FOUR!
+*Connect Four* is a two-player game, in which the player choose a color and then take turns dropping colored tokens into a seven-column,six row vertically suspended grid.The pieces fall straight down, occupying the lowest available space within the column.
 
-![connectfour](https://i.imgur.com/NTscG9o.png)        
+![connectfour](https://i.imgur.com/NTscG9o.png)  
+![connectFour](https://upload.wikimedia.org/wikipedia/commons/a/ad/Connect_Four.gif)      
 
 ## Technologies Used:
     HTML
     CSS
     JavaScript
+    Whimsical
 
 ## Gameplay
 ### Objective
