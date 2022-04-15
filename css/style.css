@@ -41,7 +41,7 @@ h3 {
     grid-template-columns: repeat(7, 10vmin);
     gap: 0.2vmin;
     height: 77vmin;
-    width: 97vmin;
+    width: 77vmin;
     justify-content: center;
     border-radius: 10%;
 }
@@ -126,4 +126,9 @@ h3 {
 h1{
     font-size: 20px;
 }
+}
+@media only screen and (min-width:300px) and (max-width:360px){
+    .rstgame > button{
+        font-size: 5px;
+    }
 }
