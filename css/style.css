@@ -54,16 +54,16 @@ h3 {
 }
 
 #buttons > button {
-  height: 4vmin;
-  width: 8vmin;
-  margin: 10px;
-  background-color: greenyellow;
-  border-radius: 30%;
+    height: 4vmin;
+    width: 8vmin;
+    margin: 10px;
+    background-color: greenyellow;
+    border-radius: 30%;
 }
 
 #buttons > button:hover {
     background-color: pink;
-  }
+}
 
 #buttons  {
     display: grid;
@@ -79,15 +79,15 @@ h3 {
     background-color: peachpuff;
     color: red;
     height: 4vmin;
-  width: 20vmin;
-  font-size: larger;
+    width: 20vmin;
+    font-size: larger;
 }
 
 .rstgame > button:hover {
     background-color: white;
     color: black;
 }
- .play{
+.play{
     color:rgb(207, 18, 160);
     font-weight: bold;
     font-size: 20px;
@@ -101,9 +101,7 @@ h3 {
     #board{
         max-height: 62vmin;
     }
-    .rstgame > button{
-       font-size: 10px;
-    }
+    
     h1{
         font-size: 30px;
     }
@@ -119,3 +117,13 @@ h3 {
     }
 }
 
+@media only screen and (min-width:300px) and (max-width:620px){
+    .rstgame > button{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width:400px){
+h1{
+    font-size: 20px;
+}
+}

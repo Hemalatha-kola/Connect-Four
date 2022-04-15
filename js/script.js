@@ -16,16 +16,16 @@ const chips = {
     '0' : "white"
 }
 
- let board;
- let player;
- let turns;
- let winner;
+let board;
+let player;
+let turns;
+let winner;
 
 
 reset();
 
 function reset(){
- board = [
+board = [
     [0 , 0 , 0 , 0 , 0 , 0],
     [0 , 0 , 0 , 0 , 0 , 0],
     [0 , 0 , 0 , 0 , 0 , 0],
@@ -34,10 +34,10 @@ function reset(){
     [0 , 0 , 0 , 0 , 0 , 0],
     [0 , 0 , 0 , 0 , 0 , 0]];
 
- player=1;
- turns=0;
- winner=null;
- func2();
+player=1;
+turns=0;
+winner=null;
+func2();
 }
 function function1(evt){
     const coloumnIndex= button.indexOf(evt.target);
@@ -46,27 +46,23 @@ function function1(evt){
         return;
     }
     const column = board[coloumnIndex];
-    
     //console.log(board[coloumnIndex]);
-   const rowIndex=column.indexOf(0);
-   
-        
+    const rowIndex=column.indexOf(0);
     console.log(column[rowIndex]);
     column[rowIndex]=player;
     player*=-1
-   
     winner = findWinner(coloumnIndex, rowIndex);
     func2();
-      if(winner ==="T"){
-          msg1.innerText = `It's a Tie!`
-      }
-      else if(winner){
-         msg1.innerText = `${winner === 1 ? 'Red' : 'Yellow'} Wins!`;
-      }
-      else{
+    if(winner ==="T"){
+        msg1.innerText = `It's a Tie!`
+    }
+    else if(winner){
+        msg1.innerText = `${winner === 1 ? 'Red' : 'Yellow'} Wins!`;
+    }
+    else{
         message.innerHTML= `Now It's ${player===1 ? "Red" : "Yellow"} 's turn`;
-      }
-      
+    }
+    
 
 }
 //
@@ -76,11 +72,10 @@ board.forEach((coloumn, coloumnidx) => {
     coloumn.forEach((cell, cellidx) => {
        //console.log(cell);
       // console.log("2. "+cellidx);
-       
-       let color = document.getElementById(`c${coloumnidx}r${cellidx}`);
-       color.style.backgroundColor= chips[cell];
+    let color = document.getElementById(`c${coloumnidx}r${cellidx}`);
+    color.style.backgroundColor= chips[cell];
     });
-     button[coloumnidx].style.visibility = coloumn.includes(0) ? "visible" : "hidden";
+    button[coloumnidx].style.visibility = coloumn.includes(0) ? "visible" : "hidden";
 
 });
 
@@ -99,29 +94,29 @@ function findWinner(){
         if(winner){
             break;
         }
-       
+    
     }
     return winner;
 }
 //
 
 function checkWinner(cI){
- const column = board[cI];
+const column = board[cI];
 
 for(let rI=0; rI< column.length; rI++){
     let winner=checkingVertical(column, rI) || checkingHorizontal(cI, rI) || checkingDiagonal(cI, rI) || checkingDiagonal2(cI, rI);
     if(winner) return winner;
 }
- return null;//otherwise it returns undefined.
+return null;//otherwise it returns undefined.
 }
 //--------Winning Logic--------------//
 function checkingVertical(column, rI){
-       if(Math.abs(column[rI] + column[rI + 1] + column[rI + 2] + column[rI + 3]) === 4){
-           return column[rI];
-       }
-       else{
-              return null;
-       }
+    if(Math.abs(column[rI] + column[rI + 1] + column[rI + 2] + column[rI + 3]) === 4){
+        return column[rI];
+    }
+    else{
+            return null;
+    }
 }
 //
 function checkingHorizontal(coloumnIndex, roIndex){
@@ -138,12 +133,12 @@ return board[coloumnIndex][roIndex];
 function checkingDiagonal(colid, rowid){
     
     if (colid>3) return null;//cannot read properties of reading 3
-   if(Math.abs(board[colid][rowid] + board[colid + 1][rowid + 1] + board[colid + 2][rowid + 2] + board[colid + 3][rowid + 3]) === 4){
-       return board[colid][rowid];
-   }
-   else{
-       return null;
-   }
+if(Math.abs(board[colid][rowid] + board[colid + 1][rowid + 1] + board[colid + 2][rowid + 2] + board[colid + 3][rowid + 3]) === 4){
+    return board[colid][rowid];
+}
+else{
+    return null;
+}
 }
 //
 
