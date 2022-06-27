@@ -17,7 +17,7 @@ At each turn, player will drop a game piece in one of the seven columns by click
 
 ### Click on the below link to play the game
 
-[Play Here!](https://seir-project1.netlify.app)
+[Play Here!](https://seir-project1-hemalatha-kola.netlify.app/)
 
 ### Reference
 ![connectFour](https://upload.wikimedia.org/wikipedia/commons/a/ad/Connect_Four.gif)
